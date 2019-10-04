@@ -1,1 +1,0 @@
-# G-JD1-2019-10-borisevichy
