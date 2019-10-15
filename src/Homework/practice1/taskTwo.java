@@ -30,29 +30,51 @@ public class taskTwo {
 	}
 
 	private static void printArray(int[] array) {
+		System.out.println("Arrays value:");
 		for (int i = 0; i < array.length; i++) {
 			System.out.println("The " + i + " element in array is " + array[i]);
 		}
 	}
 
 	private static void shortestAndLongestNumber(int[] array) {
-
-//		int length = String.valueOf(array[0]).length();
-		// System.out.println(length);
+		System.out.println("The longest and the shortest numbers.");
 		int max = String.valueOf(array[0]).length();
+
 		for (int i = 0; i < array.length; i++) {
 			if (max < String.valueOf(array[i]).length()) {
 				max = String.valueOf(array[i]).length();
 			}
 		}
-		System.out.println("Maximum value:" + max);
-		int min = String.valueOf(array[0]).length();
+		int maxValue = array[0];
+		int maxLengthVal = array[0];
 		for (int i = 0; i < array.length; i++) {
-			if (min > String.valueOf(array[i]).length()) {
-				min = String.valueOf(array[i]).length();
+			if (maxValue < array[i]) {
+				maxLengthVal = maxValue;
+				maxValue = array[i];
 			}
 		}
-		System.out.println("Minimum value:" + min);
+		System.out.println("The length of the longest number is: " + max + " its value is " + maxValue
+				+ " the first entered number is: " + maxLengthVal);
+		int min = String.valueOf(array[0]).length();
+
+		for (int i = 0; i < array.length; i++) {
+			if (min > String.valueOf(array[i]).length()) {
+
+				min = String.valueOf(array[i]).length();
+
+			}
+		}
+		int minValue = array[0];
+		int minLengthVal = array[0];
+		for (int i = 0; i < array.length; i++) {
+			if (minValue > array[i]) {
+				minLengthVal = minValue;
+				minValue = array[i];
+			}
+		}
+
+		System.out.println("The length of the shortest number is: " + min + " its value is " + minValue
+				+ " the first entered number is: " + minLengthVal);
 	}
 
 }
