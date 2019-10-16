@@ -22,9 +22,11 @@ public class taskTwo {
 		printLine(args);
 		shortestAndLongestNumber(array);
 		printLine(args);
+		averageValue();
 
 	}
 
+	
 	private static void printLine(String[] args) {
 		System.out.println("_________________________________________________");
 	}
@@ -76,5 +78,12 @@ public class taskTwo {
 		System.out.println("The length of the shortest number is: " + min + " its value is " + minValue
 				+ " the first entered number is: " + minLengthVal);
 	}
+	
+	private static void averageValue() {
+		
+		
+		
+	}
+
 
 }
