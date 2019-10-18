@@ -1,4 +1,4 @@
-package Homework.practice1;
+package homework.practice1;
 import java.util.Scanner;
 
 public class taskOne {
