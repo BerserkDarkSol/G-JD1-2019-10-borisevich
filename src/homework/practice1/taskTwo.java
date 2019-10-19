@@ -167,20 +167,17 @@ public class taskTwo {
 		}
 	}
 
+
 	private static void primeNumbers(int[] simpleNumbersarray) {
 
 		int[] localArray = copyArray(simpleNumbersarray);
-		int checkForAbsentPrimeNumbers = 0;
 		for (int i = 0; i < localArray.length; i++) {
 			for (int checkPrimeNumber = 2; checkPrimeNumber <= localArray[i]; checkPrimeNumber++) {
-				if ((localArray[i] % checkPrimeNumber) == 0 && (localArray[i] == checkPrimeNumber)) {
-					System.out.println("The prime numbers are: " + localArray[i]);
-				} else {
-					checkForAbsentPrimeNumbers++;
+				if ((localArray[i] > checkPrimeNumber) && (localArray[i] % checkPrimeNumber) == 0) {
+					break;
+				} else if ((localArray[i] == checkPrimeNumber) && (localArray[i] % checkPrimeNumber) == 0) {
+					System.out.println("The prime numbers is: " + localArray[i]);
 				}
-			}
-			if (checkForAbsentPrimeNumbers == localArray.length) {
-				System.out.println("There aren't any prime numbers");
 			}
 
 		}
@@ -190,10 +187,12 @@ public class taskTwo {
 		int checkFordigitsIncreasesNumbers = 0;
 		int[] localArray = copyArray(digitsIncreasesArray);
 		for (int i = 0; i < localArray.length; i++) {
-			if ((localArray[i] % 10)) {
-				
+			if ((localArray[i] % 10) > (localArray[i] / 10) % 10) {
+				localArray[i] = localArray[i] / 10;
+			} else {
+				checkFordigitsIncreasesNumbers++;
+				break;
 			}
-			
 		}
 	}
 
