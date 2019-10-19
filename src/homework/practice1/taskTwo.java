@@ -1,4 +1,4 @@
-package Homework.practice1;
+package homework.practice1;
 
 import java.util.Scanner;
 
@@ -190,6 +190,9 @@ public class taskTwo {
 		int checkFordigitsIncreasesNumbers = 0;
 		int[] localArray = copyArray(digitsIncreasesArray);
 		for (int i = 0; i < localArray.length; i++) {
+			if ((localArray[i] % 10)) {
+				
+			}
 			
 		}
 	}
