@@ -1,4 +1,4 @@
-package homework.practice1;
+package homework.practice2;
 
 import java.util.Scanner;
 
@@ -24,25 +24,28 @@ public class task {
 //		System.out.println(c);
 //		
 //		newArray();
-		int Ar[] = { 1, 2 };
-		// int[] Ar1 = {2, 3};
-		int[] copyAr = copyArray(Ar);
-
-		toDo(copyAr);
-		// int[] copyAr1 = copyArray(Ar);
-
+		isPalindrome(123321);
 	}
 
-	private static int[] copyArray(int[] Sergei) {
-		int[] copiedArray = new int[Sergei.length];
-		for (int i = 0; i < Sergei.length; i++) {
-			copiedArray[i] = Sergei[i];
+	public static void isPalindrome(int integer) {
+		int palindrome = integer;
+		int a = palindrome;
+		int reverse = 0;
+
+		// Compute the reverse
+		while (palindrome != 0) {
+			int remainder = palindrome % 10;
+			reverse = reverse * 10 + remainder;
+			palindrome = palindrome / 10;
 		}
-		return copiedArray;
-	}
 
-	private static void toDo(int[] inputArray) {
-		int[] resultArray = copyArray(inputArray);
+		// The integer is palindrome if integer and reverse are equal
+		if (a == reverse) {
+			System.out.println("sdfdsf"); // Improved by Peter Lawrey
+
+		} else {
+			System.out.println(a + " " + reverse);
+		}
 
 	}
 

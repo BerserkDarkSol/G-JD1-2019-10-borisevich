@@ -19,22 +19,14 @@ public class taskTwo {
 		}
 
 		copyArray(array);
-		int[] copyAr = copyArray(array);
-		printLine(args);
 		printArray(array);
-		printLine(args);
 		shortestAndLongestNumber(array);
-		printLine(args);
 		averageValue(array);
-		printLine(args);
 		evenNumber(array);
-		printLine(args);
 		threeAndFiveNumbers(array);
-		printLine(args);
 		primeNumbers(array);
-		printLine(args);
 		digitsIncreases(array);
-		printLine(args);
+		palindromeNumber(array);
 
 	}
 
@@ -44,10 +36,6 @@ public class taskTwo {
 			copiedArray[i] = copyArray[i];
 		}
 		return copiedArray;
-	}
-
-	private static void printLine(String[] args) {
-		System.out.println("_________________________________________________");
 	}
 
 	private static void printArray(int[] array) {
@@ -80,9 +68,7 @@ public class taskTwo {
 
 		for (int i = 0; i < array.length; i++) {
 			if (min > String.valueOf(array[i]).length()) {
-
 				min = String.valueOf(array[i]).length();
-
 			}
 		}
 		int minValue = array[0];
@@ -93,14 +79,12 @@ public class taskTwo {
 				minValue = array[i];
 			}
 		}
-
 		System.out.println("The length of the shortest number is: " + min + " its value is " + minValue
 				+ " the first entered number is: " + minLengthVal);
 	}
 
 	private static void averageValue(int[] array) {
 		int sumLenght = 0;
-
 		for (int i = 0; i < array.length; i++) {
 			sumLenght += String.valueOf(array[i]).length();
 		}
@@ -127,7 +111,6 @@ public class taskTwo {
 			int digitCheck = 0;
 			int localArray = array[i];
 			while (localArray != 0) {
-
 				int evenDigit = (localArray % 10) % 2;
 				if (evenDigit != 0) {
 					digitCheck++;
@@ -153,20 +136,16 @@ public class taskTwo {
 		int[] localArray = copyArray(array);
 		int countOfNonMatchingNumber = 0;
 		for (int i = 0; i < localArray.length; i++) {
-
 			if ((array[i] % 3) == 0 || (array[i] % 5) == 0) {
 				System.out.println("The numbers that divided by 3 or 5 are: " + array[i]);
 			} else {
 				countOfNonMatchingNumber++;
-
 			}
-
 		}
 		if (countOfNonMatchingNumber == localArray.length) {
 			System.out.println("There aren't any numbers that divided by 3 or 5");
 		}
 	}
-
 
 	private static void primeNumbers(int[] simpleNumbersarray) {
 
@@ -176,7 +155,7 @@ public class taskTwo {
 				if ((localArray[i] > checkPrimeNumber) && (localArray[i] % checkPrimeNumber) == 0) {
 					break;
 				} else if ((localArray[i] == checkPrimeNumber) && (localArray[i] % checkPrimeNumber) == 0) {
-					System.out.println("The prime numbers is: " + localArray[i]);
+					System.out.println("The prime number is: " + localArray[i]);
 				}
 			}
 
@@ -184,16 +163,49 @@ public class taskTwo {
 	}
 
 	private static void digitsIncreases(int[] digitsIncreasesArray) {
-		int checkFordigitsIncreasesNumbers = 0;
 		int[] localArray = copyArray(digitsIncreasesArray);
 		for (int i = 0; i < localArray.length; i++) {
-			if ((localArray[i] % 10) > (localArray[i] / 10) % 10) {
-				localArray[i] = localArray[i] / 10;
-			} else {
-				checkFordigitsIncreasesNumbers++;
-				break;
+			int a = localArray[i];
+			int b = a;
+			int c = 1;
+			int length = (int) Math.log10(a) + 1; // getting the number of digits
+			for (int j = 0; j < length - 1; j++) {
+				b = a;
+				c = 1;
+				while (b > 9) {
+					int s = b % 10; // getting the last digit
+					int r = (b % 100) / 10; // getting the second last digit
+					if (s < r) {
+						a = a + s * c * 10 - s * c - r * c * 10 + r * c; // switching the digits
+					}
+					b = a;
+					c = c * 10;
+					b = b / c; // removing the last digit from the number
+				}
+			}
+			if (a == localArray[i]) {
+				System.out.println("The number with encreased digitals is - " + a);
 			}
 		}
+	}
+
+	private static void palindromeNumber(int[] palindromeNumber) {
+		int[] localArray = copyArray(palindromeNumber);
+		for (int i = 0; i < localArray.length; i++) {
+			int palindrome = localArray[i];
+			int palindromeCopy = palindrome;
+			int reverse = 0;
+
+			while (palindrome != 0) {
+				int remainder = palindrome % 10;
+				reverse = reverse * 10 + remainder;
+				palindrome = palindrome / 10;
+			}
+			if (palindromeCopy == reverse) {
+				System.out.println("The palindrome number is - " + reverse);
+			}
+		}
+
 	}
 
 }
