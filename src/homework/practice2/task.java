@@ -1,52 +1,32 @@
 package homework.practice2;
 
-import java.util.Scanner;
-
 public class task {
 
 	public static void main(String[] args) {
-//		Scanner in = new Scanner(System.in);
-//		String s = in.nextLine();
-//		System.out.println("You entered string " + s);
+		int array[][] = { { 1, -2, 3 }, { 4, -5, 6 } };
 
-//		int array[] = {1, 2, 3};
-//
-//		for (int i = 0; i < array.length; i++) {
-//			System.out.println(i);
-//			for (int b = array[i]; b == 0; b = b / 10) {
-//				System.out.println("b = " + b % 10);
-//			}
-//		}
+		for (int i = 0; i < array.length; i++) {
+			int sum = 0;
+			boolean started = false;
+			for (int j = 0; j < array[i].length; j++) {
+				if (!started && array[i][j] > 0) {
+					started = true;
+					continue;
+				}
+				if (started && array[i][j] > 0) {
+					started = false;
+					break;
+				}
+				if (started) {
+					sum += array[i][j];
+				}
 
-//		int a = 14;
-//		int b = 3;
-//		int c = a % b;
-//		System.out.println(c);
-//		
-//		newArray();
-		isPalindrome(123321);
-	}
-
-	public static void isPalindrome(int integer) {
-		int palindrome = integer;
-		int a = palindrome;
-		int reverse = 0;
-
-		// Compute the reverse
-		while (palindrome != 0) {
-			int remainder = palindrome % 10;
-			reverse = reverse * 10 + remainder;
-			palindrome = palindrome / 10;
+			}
+			if (started) {
+				sum = 0;
+			}
+			System.out.println(sum);
 		}
-
-		// The integer is palindrome if integer and reverse are equal
-		if (a == reverse) {
-			System.out.println("sdfdsf"); // Improved by Peter Lawrey
-
-		} else {
-			System.out.println(a + " " + reverse);
-		}
-
 	}
 
 }
