@@ -1,6 +1,5 @@
 package homework.practice2;
 
-import java.util.Random;
 import java.util.Scanner;
 
 public class TaskTwo {
@@ -36,6 +35,7 @@ public class TaskTwo {
 		sortingByRandomColumn(array, size);
 		subtractingRowAvarageFromEachElement(array, size);
 		foundingSumBetweenFirstAndSecondPositiveRowNumbers(array, size);
+		transposeMatrix(array, size);
 
 	}
 
@@ -225,26 +225,46 @@ public class TaskTwo {
 
 		for (int i = 0; i < size; i++) {
 			int sum = 0;
-			int a = 1;
+			boolean startedCountingPositive = false;
 			for (int j = 0; j < size; j++) {
-				if (array[i][j] > 0) {
-
-					if (array[i][j] > 0) {
-						sum += array[i][j];
-						a++;
-					} else if (array[i][j] <= 0) {
-						sum += array[i][j];
-					}
-					if (a > 2) {
-						System.out.println(sum);
-						break;
-					}
-
-				} else {
+				if (!startedCountingPositive && array[i][j] > 0) {
+					startedCountingPositive = true;
 					continue;
 				}
+				if (startedCountingPositive && array[i][j] > 0) {
+					startedCountingPositive = false;
+					break;
+				}
+				if (startedCountingPositive) {
+					sum += array[i][j];
+				}
+
+			}
+			if (startedCountingPositive) {
+				sum = 0;
+			}
+			System.out.println("The amount of elements between first and second positive row numbers " + sum);
+		}
+		System.out.println();
+	}
+
+	private static void transposeMatrix(double[][] array, int size) {
+
+		double[][] copyArray = array;
+		double[][] transposedMatrix = new double[size][size];
+		for (int i = 0; i < size; i++) {
+			for (int j = 0; j < size; j++) {
+				transposedMatrix[j][i] = copyArray[i][j];
 			}
 		}
+
+		for (int i = 0; i < size; i++) {
+			for (int j = 0; j < size; j++) {
+				System.out.print(transposedMatrix[i][j] + " ");
+			}
+			System.out.println();
+		}
+
 	}
 
 }

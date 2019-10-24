@@ -1,4 +1,4 @@
-package Classwork.lesson6.inheritans;
+package classwork.lesson6.inheritans;
 
 public abstract class Car {
 

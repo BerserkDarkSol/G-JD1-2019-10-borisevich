@@ -1,6 +1,6 @@
-package Classwork.lesson4;
+package classwork.lesson4;
 
-import Classwork.lesson1.test;
+import classwork.lesson1.test;
 
 public class Test2 {
 

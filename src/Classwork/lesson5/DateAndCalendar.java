@@ -1,4 +1,4 @@
-package Classwork.lesson5;
+package classwork.lesson5;
 
 import java.util.Calendar;
 import java.util.Date;

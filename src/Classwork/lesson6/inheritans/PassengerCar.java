@@ -1,4 +1,4 @@
-package Classwork.lesson6.inheritans;
+package classwork.lesson6.inheritans;
 
 public class PassengerCar extends Car {
 
