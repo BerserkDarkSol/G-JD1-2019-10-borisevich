@@ -1,4 +1,4 @@
-package Classwork.lesson2;
+package classwork.lesson2;
 
 public class Test10 {
 

@@ -1,4 +1,4 @@
-package Classwork.lesson1;
+package classwork.lesson1;
 
 public class ObjectExample {
 	
