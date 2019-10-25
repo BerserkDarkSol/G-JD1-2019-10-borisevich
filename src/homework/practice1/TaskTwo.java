@@ -2,35 +2,32 @@ package homework.practice1;
 
 import java.util.Scanner;
 
-public class taskTwo {
+public class TaskTwo {
 
 	public static void main(String[] args) {
 		System.out.println("enter the number of elements in the array");
 
 		Scanner in = new Scanner(System.in);
-		Scanner inArray = new Scanner(System.in);
 		int yourNumber = in.nextInt();
 
 		System.out.println("You entered the number: " + yourNumber);
 
 		int[] array = new int[yourNumber];
 		for (int i = 0; i < array.length; i++) {
-			array[i] = inArray.nextInt();
+			array[i] = in.nextInt();
 		}
-
-		copyArray(array);
+		
 		printArray(array);
-		shortestAndLongestNumber(array);
-		averageValue(array);
-		evenNumber(array);
-		threeAndFiveNumbers(array);
-		primeNumbers(array);
-		digitsIncreases(array);
-		palindromeNumber(array);
-
+		findShortestAndLongestNumber(array);
+		findAverageValue(array);
+		findEvenNumber(array);
+		findThreeAndFiveNumbers(array);
+		findPrimeNumbers(array);
+		findDigitsIncreases(array);
+		findPalindromeNumber(array);
 	}
 
-	private static int[] copyArray(int[] copyArray) {
+	private static int[] initialArray (int[] copyArray) {
 		int[] copiedArray = new int[copyArray.length];
 		for (int i = 0; i < copyArray.length; i++) {
 			copiedArray[i] = copyArray[i];
@@ -45,7 +42,7 @@ public class taskTwo {
 		}
 	}
 
-	private static void shortestAndLongestNumber(int[] array) {
+	private static void findShortestAndLongestNumber(int[] array) {
 		System.out.println("The longest and the shortest numbers.");
 		int max = String.valueOf(array[0]).length();
 
@@ -83,7 +80,7 @@ public class taskTwo {
 				+ " the first entered number is: " + minLengthVal);
 	}
 
-	private static void averageValue(int[] array) {
+	private static void findAverageValue(int[] array) {
 		int sumLenght = 0;
 		for (int i = 0; i < array.length; i++) {
 			sumLenght += String.valueOf(array[i]).length();
@@ -104,7 +101,7 @@ public class taskTwo {
 		}
 	}
 
-	private static void evenNumber(int[] array) {
+	private static void findEvenNumber(int[] array) {
 		boolean nothingFound = true;
 		int qualityOfNumbers = 0;
 		for (int i = 0; i < array.length; i++) {
@@ -131,9 +128,9 @@ public class taskTwo {
 		}
 	}
 
-	private static void threeAndFiveNumbers(int[] array) {
+	private static void findThreeAndFiveNumbers(int[] array) {
 
-		int[] localArray = copyArray(array);
+		int[] localArray = initialArray(array);
 		int countOfNonMatchingNumber = 0;
 		for (int i = 0; i < localArray.length; i++) {
 			if ((array[i] % 3) == 0 || (array[i] % 5) == 0) {
@@ -147,9 +144,9 @@ public class taskTwo {
 		}
 	}
 
-	private static void primeNumbers(int[] simpleNumbersarray) {
+	private static void findPrimeNumbers(int[] simpleNumbersarray) {
 
-		int[] localArray = copyArray(simpleNumbersarray);
+		int[] localArray = initialArray(simpleNumbersarray);
 		for (int i = 0; i < localArray.length; i++) {
 			for (int checkPrimeNumber = 2; checkPrimeNumber <= localArray[i]; checkPrimeNumber++) {
 				if ((localArray[i] > checkPrimeNumber) && (localArray[i] % checkPrimeNumber) == 0) {
@@ -162,8 +159,8 @@ public class taskTwo {
 		}
 	}
 
-	private static void digitsIncreases(int[] digitsIncreasesArray) {
-		int[] localArray = copyArray(digitsIncreasesArray);
+	private static void findDigitsIncreases(int[] digitsIncreasesArray) {
+		int[] localArray = initialArray(digitsIncreasesArray);
 		for (int i = 0; i < localArray.length; i++) {
 			int a = localArray[i];
 			int b = a;
@@ -189,8 +186,8 @@ public class taskTwo {
 		}
 	}
 
-	private static void palindromeNumber(int[] palindromeNumber) {
-		int[] localArray = copyArray(palindromeNumber);
+	private static void findPalindromeNumber(int[] palindromeNumber) {
+		int[] localArray = initialArray(palindromeNumber);
 		for (int i = 0; i < localArray.length; i++) {
 			int palindrome = localArray[i];
 			int palindromeCopy = palindrome;

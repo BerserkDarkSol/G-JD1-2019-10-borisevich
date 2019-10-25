@@ -7,7 +7,6 @@ public class TaskTwo {
 	public static void main(String[] args) {
 
 		Scanner in = new Scanner(System.in);
-		Scanner inArray = new Scanner(System.in);
 
 		System.out.println("Enter the sides of your matrix number");
 		int size = in.nextInt();
@@ -21,40 +20,58 @@ public class TaskTwo {
 			}
 		}
 
-		for (double[] anArr : array) {
-			for (double anAnArr : anArr) {
-				System.out.print(anAnArr + " ");
+		for (double[] rows : array) {
+			for (double cell : rows) {
+				System.out.print(cell + " ");
 			}
 			System.out.println();
 		}
 		System.out.println();
 
-		roundingNumbersInArray(array);
-		foundingAndDeletingMaxValueInArray(array, size);
-		foundingAndDeletingZeroColAndRowInArray(array, size);
-		sortingByRandomColumn(array, size);
-		subtractingRowAvarageFromEachElement(array, size);
-		foundingSumBetweenFirstAndSecondPositiveRowNumbers(array, size);
+		roundNumbersInArray(array);
+		foundAndDeletingMaxValueInArray(array, size);
+		foundAndDeletingZeroColAndRowInArray(array, size);
+		sortByRandomColumn(array, size);
+		subtractRowAvarageFromEachElement(array, size);
+		foundSumBetweenFirstAndSecondPositiveRowNumbers(array, size);
 		transposeMatrix(array, size);
 
 	}
+	
+	private static void printChengedMatrix(int size, int columnsForRemoveSize, int rowsForRemoveSize, double[][] newMatrix) {
+		for (int i = 0; i < size - rowsForRemoveSize; i++) {
+			for (int j = 0; j < size - columnsForRemoveSize; j++) {
+				System.out.print(newMatrix[i][j] + " ");
+			}
+			System.out.println();
+		}
+	}
+	
+	private static void printMatrix(double[][] array, int size) {
+		for (int i = 0; i < size; i++) {
+			for (int j = 0; j < size; j++) {
+				System.out.print(array[i][j] + " ");
+			}
+			System.out.println();
+		}
+	}
 
-	private static void roundingNumbersInArray(double[][] array) {
+	private static void roundNumbersInArray(double[][] array) {
 		for (int i = 0; i < array.length; i++) {
 			for (int j = 0; j < array.length; j++) {
 				array[i][j] = Math.round(array[i][j]);
 			}
 		}
-		for (double[] anArr : array) {
-			for (double anAnArr : anArr) {
-				System.out.print(anAnArr + " ");
+		for (double[] row : array) {
+			for (double cell : row) {
+				System.out.print(cell + " ");
 			}
 			System.out.println();
 		}
 
 	}
 
-	private static void foundingAndDeletingMaxValueInArray(double[][] array, int size) {
+	private static void foundAndDeletingMaxValueInArray(double[][] array, int size) {
 
 		// Finding the max number in source matrix
 		double maxNumber = array[0][0];
@@ -110,16 +127,11 @@ public class TaskTwo {
 		// Displaying result matrix
 		System.out.println();
 		System.out.println("New matrix without column and rows with max number: ");
-		for (int i = 0; i < size - rowsForRemoveSize; i++) {
-			for (int j = 0; j < size - columnsForRemoveSize; j++) {
-				System.out.print(newMatrix[i][j] + " ");
-			}
-			System.out.println();
-		}
+		printChengedMatrix(size, columnsForRemoveSize, rowsForRemoveSize, newMatrix);
 
 	}
 
-	private static void foundingAndDeletingZeroColAndRowInArray(double[][] array, int size) {
+	private static void foundAndDeletingZeroColAndRowInArray(double[][] array, int size) {
 
 		// Founding indexes of the rows and columns without zero number, and sizes for
 		// new matrix
@@ -161,16 +173,13 @@ public class TaskTwo {
 		// Displaying result matrix
 		System.out.println();
 		System.out.println("New matrix without column and rows with zero numbers: ");
-		for (int i = 0; i < size - rowsForRemoveSize; i++) {
-			for (int j = 0; j < size - columnsForRemoveSize; j++) {
-				System.out.print(newMatrix[i][j] + " ");
-			}
-			System.out.println();
-		}
+		printChengedMatrix(size, columnsForRemoveSize, rowsForRemoveSize, newMatrix);
 		System.out.println();
 	}
 
-	private static void sortingByRandomColumn(double[][] array, int size) {
+
+
+	private static void sortByRandomColumn(double[][] array, int size) {
 		System.out.println("New matrix with sorting by random column: ");
 		int randomColumnSorting = (int) ((Math.random() * size));
 		for (int i = 0; i < size; i++) {
@@ -184,16 +193,10 @@ public class TaskTwo {
 				}
 			}
 		}
-		for (int i = 0; i < size; i++) {
-			for (int j = 0; j < size; j++) {
-				System.out.print(array[i][j] + " ");
-			}
-			System.out.println();
-		}
-
+		printMatrix(array, size);
 	}
 
-	private static void subtractingRowAvarageFromEachElement(double[][] array, int size) {
+	private static void subtractRowAvarageFromEachElement(double[][] array, int size) {
 
 		int arrrayOfAvarage[] = new int[size];
 		for (int i = 0; i < size; i++) {
@@ -212,16 +215,10 @@ public class TaskTwo {
 			avarageForEachRow++;
 		}
 		System.out.println("The matrix with subtracting avarage number in each row: ");
-		for (int i = 0; i < size; i++) {
-			for (int j = 0; j < size; j++) {
-				System.out.print(array[i][j] + " ");
-			}
-			System.out.println();
-		}
-
+		printMatrix(array, size);
 	}
 
-	private static void foundingSumBetweenFirstAndSecondPositiveRowNumbers(double[][] array, int size) {
+	private static void foundSumBetweenFirstAndSecondPositiveRowNumbers(double[][] array, int size) {
 
 		for (int i = 0; i < size; i++) {
 			int sum = 0;
@@ -257,14 +254,7 @@ public class TaskTwo {
 				transposedMatrix[j][i] = copyArray[i][j];
 			}
 		}
-
-		for (int i = 0; i < size; i++) {
-			for (int j = 0; j < size; j++) {
-				System.out.print(transposedMatrix[i][j] + " ");
-			}
-			System.out.println();
-		}
-
+		printMatrix(transposedMatrix, size);
 	}
 
 }
