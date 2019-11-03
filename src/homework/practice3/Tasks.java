@@ -56,7 +56,7 @@ public class Tasks {
 			} else {
 				String changeWords = words[i].substring(0, (numberOftheSymbol - 1)) + newSymbol
 						+ words[i].substring(numberOftheSymbol);
-				// System.out.println(changeWords);
+				System.out.println(changeWords);
 			}
 		}
 	}
@@ -95,7 +95,7 @@ public class Tasks {
 			if (newWords[i] == null || newWords[i].equals("0")) {
 				continue;
 			} else {
-				// System.out.println(newWords[i]);
+				System.out.println(newWords[i]);
 			}
 		}
 	}
@@ -115,9 +115,9 @@ public class Tasks {
 
 		for (int i = 0; i < words.length; i++) {
 			if (words[i].length() == max) {
-				// System.out.println(words[i]);
+				System.out.println(words[i]);
 			} else if (words[i].length() == min) {
-				// System.out.println(words[i]);
+				System.out.println(words[i]);
 			}
 		}
 	}
