@@ -1,34 +1,24 @@
-package homework.practice4;
+package homework.practice4.text;
 
-public class Text {
+import java.util.ArrayList;
+import java.util.List;
 
-	Sentence dsfadsfa = new Sentence();
-	String newText[] = dsfadsfa.newSentence;
+public class Executor {
+
+	Text text = new Text();
+	static Sentence sentence = new Sentence();
+	static Words words = new Words();
+	
+	List <Text> newText = new ArrayList<Text>();
+	
+	
+	
 
 	public static void main(String[] args) {
 
-		Text mainTextObject = new Text();
-		String[] localTextObject = mainTextObject.newText;
+		Sentence.devideTextBySentences();
+		Words.devideTextByWords();
 
-		for (int i = 0; i < localTextObject.length; i++) {
-			System.out.println(localTextObject[i] + " ");
-		}
 	}
-}
-
-class Sentence {
-
-	Words sentenceTextObject = new Words();
-	String newSentence[] = { sentenceTextObject.newWords1, sentenceTextObject.newWords2, sentenceTextObject.newWords3,
-			sentenceTextObject.newWords4 };
-
-}
-
-class Words {
-
-	String newWords1 = "one";
-	String newWords2 = "two";
-	String newWords3 = "three";
-	String newWords4 = "four";
 
 }
