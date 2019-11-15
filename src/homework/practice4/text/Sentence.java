@@ -1,16 +1,26 @@
 package homework.practice4.text;
 
-class Sentence extends Text {
+import java.util.List;
 
-	Text sentence = new Text();
+public class Sentence {
 
-	static void devideTextBySentences() {
+	private List<Word> words;
 
-		String sentences[] = text.split("[.]+");
-		for (int i = 0; i < sentences.length; i++) {
-			System.out.println(sentences[i]);
+    public Sentence(List<Word> words) {
+        this.words = words;
+    }
 
-		}
-	}
+    public List<Word> getWords() {
+        return words;
+    }
 
+    public void printSentence() {
+        for (int i = 0; i < words.size() - 1; i++) {
+            words.get(i).printWord();
+            System.out.print(" ");
+        }
+        words.get(words.size() - 1).printWord();
+        System.out.print(".");
+    }
+	
 }

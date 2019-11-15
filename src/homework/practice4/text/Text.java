@@ -1,9 +1,31 @@
 package homework.practice4.text;
 
+import java.util.List;
+
 public class Text {
 
-	 String textTitle = "Title";
-	 static String text = "Lorem ipsum dolor sit amet. Consectetur adipiscing elit. ";
+	private String title = "Nekrasov";
+
+	private List<Sentence> sentences;
+
+	public Text(List<Sentence> sentences) {
+		this.sentences = sentences;
+	}
+
+	public void printText() {
+		System.out.println(title);
+		for (int i = 0; i < sentences.size(); i++) {
+			sentences.get(i).printSentence();
+			System.out.print(" ");
+		}
+	}
 	
-	
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
 }

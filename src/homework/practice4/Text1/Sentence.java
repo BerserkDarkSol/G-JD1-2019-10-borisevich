@@ -1,0 +1,20 @@
+package homework.practice4.Text1;
+
+import java.util.ArrayList;
+import java.util.List;
+
+class Sentence {
+
+	List<Word> words = new ArrayList<>();
+	
+	
+	public List<Word> getWords() {
+		return words;
+	}
+	public void setWords(List<Word> words) {
+		this.words = words;
+	}
+	
+	
+
+}
