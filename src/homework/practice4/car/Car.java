@@ -2,9 +2,9 @@ package homework.practice4.car;
 
 public class Car {
 
-	private static String carModel;
-	private static String carEngine;
-	private static int carWheel;
+	private String carModel;
+	private String carEngine;
+	private int carWheel;
 
 	public void printEngineType() {
 		System.out.println("Car engine type is - " + carEngine);
@@ -18,12 +18,12 @@ public class Car {
 		System.out.println("Car model is - " + carModel);
 	}
 
-	public static int getCarWheel() {
+	public int getCarWheel() {
 		return carWheel;
 	}
 
 	public void setCarWheel(int carWheel) {
-		Car.carWheel = carWheel;
+		this.carWheel = carWheel;
 	}
 
 	public String getCarModel() {
