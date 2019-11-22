@@ -8,6 +8,7 @@ public class Executor {
 
 	public static void main(String[] args) {
 
+		setTitle();
 		List<Sentence> sentences = new ArrayList<>();
 		List<Word> words = new ArrayList<>();
 		String text = "Once upon a time in the cold winter time";
@@ -32,6 +33,11 @@ public class Executor {
 		Text userText = new Text(sentences);
 		userText.printText();
 
+	}
+
+	public static void setTitle() {
+		Text text = new Text();
+		text.setTitle("Nekrasov");
 	}
 
 }

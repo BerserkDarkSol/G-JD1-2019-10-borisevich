@@ -4,12 +4,15 @@ import java.util.List;
 
 public class Text {
 
-	private String title = "Nekrasov";
+	private String title;
 
 	private List<Sentence> sentences;
 
 	public Text(List<Sentence> sentences) {
 		this.sentences = sentences;
+	}
+
+	public Text() {
 	}
 
 	public void printText() {
