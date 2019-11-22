@@ -1,29 +1,39 @@
 package homework.practice4.car;
 
+import java.util.List;
+
 public class Car {
 
 	private String carModel;
 	private String carEngine;
-	private int carWheel;
+	private int fuel;
 
-	public void printEngineType() {
-		System.out.println("Car engine type is - " + carEngine);
+	private List<Wheel> wheel;
+	
+	public String getCarEngine() {
+		return carEngine;
 	}
 
-	public void printWheelQuantity() {
-		System.out.println("Car wheel quantity is - " + carWheel);
+	public void setCarEngine(String carEngine) {
+		this.carEngine = carEngine;
 	}
 
-	public void printCarModel() {
-		System.out.println("Car model is - " + carModel);
+	private int carWheelSize;
+
+	public Car(int i) {
 	}
 
-	public int getCarWheel() {
-		return carWheel;
+	public Car() {
 	}
 
-	public void setCarWheel(int carWheel) {
-		this.carWheel = carWheel;
+	public void setCarWheel() {
+		Wheel wheel = new Wheel();
+		wheel.setSize(carWheelSize);
+	}
+
+	public void setCarEngineType() {
+		Engine engine = new Engine();
+		engine.setEngineType(carEngine);
 	}
 
 	public String getCarModel() {
@@ -34,13 +44,20 @@ public class Car {
 		this.carModel = carModel;
 	}
 
-	public String getCarEngine() {
-		return carEngine;
+	public List<Wheel> getWheel() {
+		return wheel;
 	}
 
-	public String setCarEngine(String carEngine) {
-		this.carEngine = carEngine;
-		return carEngine;
+	public void setWheel(List<Wheel> wheel) {
+		this.wheel = wheel;
+	}
+
+	public int getFuel() {
+		return fuel;
+	}
+
+	public void setFuel(int fuel) {
+		this.fuel = fuel;
 	}
 
 }

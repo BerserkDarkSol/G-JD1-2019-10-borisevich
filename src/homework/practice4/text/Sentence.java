@@ -16,7 +16,7 @@ public class Sentence {
     }
 
     public void printSentence() {
-        for (int i = 0; i < words.size(); i++) {
+    	for (int i = 0; i < words.size(); i++) {
             words.get(i).printWord();
             System.out.print(" ");
         }

@@ -1,10 +1,13 @@
 package homework.practice4.car;
 
 public class Wheel {
+	private int size;
 
-	public void setCarWheel(int wheel) {
+	public int getSize() {
+		return size;
+	}
 
-		Car car = new Car();
-		car.setCarWheel(wheel);
+	public void setSize(int size) {
+		this.size = size;
 	}
 }

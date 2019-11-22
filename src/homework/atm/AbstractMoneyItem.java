@@ -1,4 +1,4 @@
-package homework.practice5.atm;
+package homework.atm;
 
 public abstract class AbstractMoneyItem {
 

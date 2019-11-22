@@ -1,4 +1,4 @@
-package homework.practice5.atm;
+package homework.atm;
 
 import java.util.ArrayList;
 import java.util.Collections;

@@ -1,4 +1,4 @@
-package homework.practice5.atm;
+package homework.atm;
 
 public class ResultItem extends AbstractMoneyItem {
 

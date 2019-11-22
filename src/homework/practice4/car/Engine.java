@@ -1,11 +1,14 @@
 package homework.practice4.car;
 
 public class Engine {
+	private String engineType;
 
-	public void setCarEngine(String engine) {
+	public String getEngineType() {
+		return engineType;
+	}
 
-		Car car = new Car();
-		car.setCarEngine(engine);
+	public void setEngineType(String engineType) {
+		this.engineType = engineType;
 	}
 
 }
