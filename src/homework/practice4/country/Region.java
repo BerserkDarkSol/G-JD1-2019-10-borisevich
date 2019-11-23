@@ -19,13 +19,6 @@ public class Region {
 		this.region = string;
 	}
 
-	public Region() {
-	}
-
-	public Region(int i) {
-		this.areaOfEachRegion = i;
-	}
-
 	public Region(List<District> districts) {
 		this.districts = districts;
 	}
