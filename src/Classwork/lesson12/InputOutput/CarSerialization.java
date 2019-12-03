@@ -1,4 +1,4 @@
-package classwork.lesson12.InputOutput;
+package classwork.lesson12.inputOutput;
 
 import java.io.FileOutputStream;
 import java.io.IOException;
